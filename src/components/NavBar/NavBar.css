@@ -3,6 +3,7 @@
     justify-content: space-between;
     height: 60px;
     background-color: rgba(253, 252, 237, 1);
+    border-bottom: 1px solid black;
 }
 
 .nav__primary, .nav__secondary {
