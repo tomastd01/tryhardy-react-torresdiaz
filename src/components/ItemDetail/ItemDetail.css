@@ -1,0 +1,21 @@
+.detail {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.detailImage {
+    width: 100%;
+    text-align: center;
+}
+
+.detailImage img {
+    width: 80%;
+}
+
+.detailPrice, .detailTitle {
+    font-size: 35px;
+    font-weight: 600;
+}
