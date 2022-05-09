@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import { useParams } from "react-router-dom";
 import ItemDetail from "../../components/ItemDetail/ItemDetail"
 import "./ItemDetailContainer.css"
@@ -6,19 +6,19 @@ import "./ItemDetailContainer.css"
 
 function getItem(id) {
     const myPromise = new Promise((resolve, reject) => {
-        const items =[ 
-            {id: 1, title: "Mesa de arrime", description: ".", price: 5000, pictureUrl: "../../../public/images/ma1.jpg"},
+        const items = 
+            {id: 1, title: "Mesa de arrime", description: ".", price: 5000, pictureUrl: "../images/ma1.jpg"} /*
             {id: 2, title: "Estanteria rombo", description: ".", price: 4000, pictureUrl: "../images/est1.jpg"},
             {id: 3, title: "Estanteria carrito", description: ".", price: 9000, pictureUrl: "../images/est2.jpg"},
             {id: 4, title: "Escritorio", description: ".", price: 17000, pictureUrl: "../images/esc2.jpg"},
             {id: 5, title: "Escritorio c/ estantes", description: ".", price: 20000, pictureUrl: "../images/esc1.jpg"},
-            {id: 6, title: "Mesa exterior", description: ".", price: 25000, pictureUrl: "../images/mg1.jpg"}];
+            {id: 6, title: "Mesa exterior", description: ".", price: 25000, pictureUrl: "../images/mg1.jpg"}] */;
 
-        const item = items.filter(item => item.id === parseInt(id))
+        /* const item = items.filter(item => item.id === parseInt(id)) */
 
         setTimeout(() => {
-            resolve(item[0]);
-        }, 1000);
+            resolve(items);
+        }, 0);
     });
     return myPromise
 }

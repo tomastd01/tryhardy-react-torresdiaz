@@ -12,7 +12,7 @@ function Item({item}) {
                         <img className="card__picture" src={item?.pictureUrl} alt="imagen" />
                     </div>
                     <div className="card__info">
-                        <h5 className="card__name" href="#">{item?.title}</h5>
+                        <h4 className="card__name">{item?.title}</h4>
                         <div><p className="card__price">$ {item?.price}</p></div>
                     </div>
                 </div>

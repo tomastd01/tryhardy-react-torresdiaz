@@ -3,7 +3,6 @@ import "./ItemDetail.css"
 
 function ItemDetail({item}) {
     return (
-        <>
             <div className="detail">
                 <h2 className="detailTitle">{item?.title}</h2>
                 <div className="detailImage">
@@ -13,7 +12,6 @@ function ItemDetail({item}) {
                     <p className="detailPrice">$ {item?.price}</p>
                 </div>
             </div>
-        </>
     )
 }
 
