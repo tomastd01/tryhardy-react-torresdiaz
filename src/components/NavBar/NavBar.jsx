@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 import './NavBar.css';
 
 import CartWidget from '../CartWidget/CartWidget';
@@ -12,7 +13,7 @@ function NavBar(props) {
             </ul>
         </nav>
         <div className='logoWrapper'>
-            <a href='./index.html'><p className='navLogo'>mebel</p></a>
+            <Link to="/"><p className='navLogo'>mebel</p></Link>
         </div>
         <nav className='nav__secondary'>
             <ul className='nav__list'>
