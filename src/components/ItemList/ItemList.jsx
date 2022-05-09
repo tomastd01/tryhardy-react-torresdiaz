@@ -2,12 +2,12 @@ import React from "react";
 import "./ItemList.css"
 import Item from "../Item/Item";
 
-function ItemList ( {items} ) {
+function ItemList ( {products} ) {
     return (
         <div className="itemList">
-        {items.map(item => {
+        {products.map(product => {
             return (
-                <Item key={item.id} title={item.title} price={item.price} pictureUrl={item.pictureUrl} />
+                <Item key={product.id} item={product} />
             )
         })}
         </div>

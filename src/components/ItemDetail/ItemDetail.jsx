@@ -5,12 +5,12 @@ function ItemDetail({item}) {
     return (
         <>
             <div className="detail">
-                <h2 className="detailTitle">{item.title}</h2>
+                <h2 className="detailTitle">{item?.title}</h2>
                 <div className="detailImage">
-                    <img src={item.pictureUrl} alt="" />
+                    <img src={item?.pictureUrl} alt="" />
                 </div>
                 <div>
-                    <p className="detailPrice">$ {item.price}</p>
+                    <p className="detailPrice">$ {item?.price}</p>
                 </div>
             </div>
         </>
