@@ -24,7 +24,7 @@ function ItemCount ( {stock, initial, onAdd} ) {
                 <input readOnly id="quantity" value={count} />
                 <button className='itemCounter__btn' onClick={ () => plusBtn() }>+</button>
             </div>
-            <button className='addToCart__btn' onClick={() => onAdd()}>Add to cart</button>
+            <button className='addToCart__btn' onClick={() => onAdd(count)}>Add to cart</button>
         </div>
     )
 }
