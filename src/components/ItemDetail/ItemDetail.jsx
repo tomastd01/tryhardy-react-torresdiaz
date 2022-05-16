@@ -1,14 +1,20 @@
 import React, {useState} from "react";
 import { Link } from "react-router-dom";
+import { useCartContext } from "../../context/contextProvider";
 
 import ItemCount from "../ItemCount/ItemCount";
 import "./ItemDetail.css"
 
-function ItemDetail({item}) {
+function ItemDetail( { item } ) {
 
     const [itemQuantity, setItemQuantity] = useState(null);
+    const {addItem} = useCartContext();
 
-    const addHandler = (quantityToAdd) => setItemQuantity(quantityToAdd);
+    const addHandler = (quantityToAdd) => {
+        setItemQuantity(quantityToAdd);
+        addItem(item, quantityToAdd)
+    }
+    
 
     return (
             <div className="detail">

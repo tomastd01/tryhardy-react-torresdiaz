@@ -20,6 +20,7 @@ function getProducts(category) {
         /* const product = items.filter(item => item.id == id) */
 
         const productsFiltered = category ? products.filter(product => product.category === category) : products;
+ 
         setTimeout(() => {
             resolve(productsFiltered);
         }, 500);
