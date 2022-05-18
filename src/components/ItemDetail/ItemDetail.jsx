@@ -10,9 +10,9 @@ function ItemDetail( { item } ) {
     const [itemQuantity, setItemQuantity] = useState(null);
     const {addItem} = useCartContext();
 
-    const addHandler = (quantityToAdd) => {
-        setItemQuantity(quantityToAdd);
-        addItem(item, quantityToAdd)
+    const addHandler = (quantity) => {
+        setItemQuantity(quantity);
+        addItem(item, quantity)
     }
     
 
