@@ -1,0 +1,26 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.cart-widget {
+    display: inline-block;
+    padding: 2px 15px;
+    border-radius: 100px;
+    text-align: center;
+    font-family: inherit;
+    color: #1d322d;
+}
+
+.bi-cart {
+    padding-right: 5px;
+}
+
+.orange-hl {
+    background-color: #f1aa7f;
+}
+
+.orange-hl:hover {
+    background-color: #cc7940;
+}
