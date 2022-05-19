@@ -1,18 +1,15 @@
-import React, {useState} from "react";
+import React, { useContext} from "react";
 import { Link } from "react-router-dom";
-import { useCartContext } from "../../context/contextProvider";
-
+import CartContext from "../../store/CartContext";
 import ItemCount from "../ItemCount/ItemCount";
-import "./ItemDetail.css"
+import "./ItemDetail.css";
 
 function ItemDetail( { item } ) {
 
-    const [itemQuantity, setItemQuantity] = useState(null);
-    const {addItem} = useCartContext();
+    const context = useContext(CartContext);
 
-    const addHandler = (quantity) => {
-        setItemQuantity(quantity);
-        addItem(item, quantity)
+    function addHandler(quantityToAdd) {
+        context.addItem({quantity: quantityToAdd, ...item})
     }
     
 
@@ -26,9 +23,13 @@ function ItemDetail( { item } ) {
                     <p className="detailPrice">$ {item?.price}</p>
                 </div>
                 <div className="countContainer">
-                    {
-                        itemQuantity ? <Link to="/cart"><button>Buy {itemQuantity} products now</button></Link> 
-                        : <ItemCount initial={1} stock={10} onAdd={addHandler} />
+                    <ItemCount initial={0} stock={10} onAdd={addHandler} />
+                    {context.products.length &&
+                        <button onClick={() => console.log(context)}>
+                            <Link to='/cart'>
+                                Terminar compra ({ context.getCartQuantity() } items)
+                            </Link>
+                        </button>
                     }
                 </div>
             </div>

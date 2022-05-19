@@ -2,8 +2,6 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
 import ItemList from "../../components/ItemList/ItemList";
-
-// import ItemCount from "../../components/ItemCount/ItemCount";
 import './ItemListContainer.css';
 
 

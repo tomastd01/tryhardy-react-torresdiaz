@@ -5,7 +5,7 @@ function ItemCount ( {stock, initial, onAdd} ) {
     const [count, setCount] = useState(initial)
 
     function minusBtn() {
-        if (count > initial) {
+        if (count > 0) {
             setCount(count - 1)
         }
     }
