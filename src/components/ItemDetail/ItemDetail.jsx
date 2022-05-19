@@ -23,11 +23,11 @@ function ItemDetail( { item } ) {
                     <p className="detailPrice">$ {item?.price}</p>
                 </div>
                 <div className="countContainer">
-                    <ItemCount initial={0} stock={10} onAdd={addHandler} />
+                    <ItemCount initial={1} stock={10} onAdd={addHandler} />
                     {context.products.length &&
                         <button onClick={() => console.log(context)}>
                             <Link to='/cart'>
-                                Terminar compra ({ context.getCartQuantity() } items)
+                                Terminar mi compra
                             </Link>
                         </button>
                     }

@@ -5,7 +5,6 @@ const CartContext = createContext({
     addItem: () => {},
     removeItem: () => {},
     clearCart: () => {},
-    isInCart: () => {},
     getCartQuantity: () => {},
 })
 
@@ -21,6 +20,7 @@ export const CartContextProvider = ({children}) => {
         }
     }
 
+
     const removeItem = (id) => {
         const indexToRemove = productList.findIndex(item => item.id === id);
         if (productList[indexToRemove].quantity === 1) {
@@ -34,18 +34,20 @@ export const CartContextProvider = ({children}) => {
         setProductList([])
     }
 
-    const isInCart = (id) => {
-        return productList.map(p => p.id).indexOf(id) !== -1;
-    }
-
     const getCartQuantity = () => {
         return productList.reduce((total, value) => {
             return total + value.quantity
         }, 0)
     }
 
+    const totalPrice = () => {
+        return productList.reduce((total, value) => {
+            return total + value.price * value.quantity
+        }, 0)
+    }
+
     return (
-        <CartContext.Provider value={{ products: productList, addItem, removeItem, clearCart, isInCart, getCartQuantity}}>
+        <CartContext.Provider value={{ products: productList, addItem, totalPrice, removeItem, clearCart, getCartQuantity}}>
             {children}
         </CartContext.Provider>
     )
