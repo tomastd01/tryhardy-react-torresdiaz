@@ -1,8 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { formatPrice } from "../PriceFormater";
 import "./Item.css"
 
 function Item({item}) {
+
+
     return (
         <>
         <Link to={'/item/' + item?.id}>
@@ -13,7 +16,7 @@ function Item({item}) {
                     </div>
                     <div className="card__info">
                         <h4 className="card__name">{item?.title}</h4>
-                        <div><p className="card__price">$ {item?.price}</p></div>
+                        <div><p className="card__price">$ {formatPrice(item?.price)}</p></div>
                     </div>
                 </div>
             </div>

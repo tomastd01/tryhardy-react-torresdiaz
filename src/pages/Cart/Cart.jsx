@@ -2,10 +2,11 @@ import React, { useContext } from 'react'
 import { Link } from 'react-router-dom';
 import CartItem from '../../components/CartItem/CartItem';
 import CartContext from '../../store/CartContext';
-import "./Cart.css"
+import {formatPrice} from '../../components/PriceFormater';
+import "./Cart.css";
 
 function Cart() {
-    const {clearCart, products, totalPrice, getCartQuantity} = useContext(CartContext);
+    const {clearCart, products, totalPrice} = useContext(CartContext);
 
     return (
         <div className='cart__container'>
@@ -18,7 +19,7 @@ function Cart() {
                         <div className="checkout-btn">
                             <p>Terminar compra</p>
                             <span className='dot'> ● </span>
-                            <span>${totalPrice()}</span>
+                            <span>${formatPrice(totalPrice())}</span>
                         </div>
                         <button className='clear-btn' onClick={() => clearCart()}>Vaciar carrito</button>
                     </div> 

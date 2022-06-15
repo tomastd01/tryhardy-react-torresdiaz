@@ -1,9 +1,10 @@
 import React, {useContext} from "react";
 import CartContext from "../../store/CartContext";
+import { formatPrice } from "../PriceFormater";
 import "./CartItem.css"
 
 function CartItem( {item} ) {
-    const {removeItem} = useContext(CartContext)
+    const {removeItem} = useContext(CartContext);
 
     return (
         <div className="cart-item">
@@ -15,7 +16,7 @@ function CartItem( {item} ) {
                     <h6 className="cart-item__title">{item?.title}</h6>
                 </div>
                 <div className="cart-item__col2">
-                    <span className="cart-item__price">${item?.price}</span>
+                    <span className="cart-item__price">$ {formatPrice(item?.price)}</span>
                     <button className="remove-btn" onClick={() => removeItem(item?.id)}>Quitar producto (x)</button>
                 </div>
             </div>

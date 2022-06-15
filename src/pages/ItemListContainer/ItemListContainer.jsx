@@ -38,7 +38,6 @@ function ItemListContainer() {
         <>
             <div className="itemListContainer">
                 <ItemList products = {products} />
-                {/* <ItemCount stock={10} initial={0} onAdd={msg} /> */}
             </div>
         </>
     )
