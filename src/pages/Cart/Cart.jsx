@@ -4,9 +4,24 @@ import CartItem from '../../components/CartItem/CartItem';
 import CartContext from '../../store/CartContext';
 import {formatPrice} from '../../components/PriceFormater';
 import "./Cart.css";
+import {doc, collection, addDoc, getFirestore} from 'firebase/firestore';
 
 function Cart() {
     const {clearCart, products, totalPrice} = useContext(CartContext);
+    const db = getFirestore();
+
+    const addOrder = (products) => {
+        products.map(p => 
+            addDoc(
+                collection(db, 'orders'), {
+                    item: {
+                        name: p.title,
+                        price: p.price,
+                    }
+                }
+            )    
+        )
+    }
 
     return (
         <div className='cart__container'>
@@ -16,7 +31,7 @@ function Cart() {
 
                 { products.length ?
                     <div className='cart__info'>
-                        <div className="checkout-btn">
+                        <div className="checkout-btn" onClick={() => addOrder(products)}>
                             <p>Terminar compra</p>
                             <span className='dot'> ● </span>
                             <span>${formatPrice(totalPrice())}</span>

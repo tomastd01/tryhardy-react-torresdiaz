@@ -14,7 +14,7 @@ export const CartContextProvider = ({children}) => {
     const addItem = (product) => {
         const repeatedItemIndex = productList.findIndex(item => item.id === product.id);
         if (repeatedItemIndex !== -1) {
-            setProductList(productList.map(p => p.id === product.id ? {...p, quanityt: p.quantity + product.quantity} : p))
+            setProductList(productList.map(p => p.id === product.id ? {...p, quantity: p.quantity + product.quantity} : p))
         } else {
             setProductList([product, ...productList])
         }

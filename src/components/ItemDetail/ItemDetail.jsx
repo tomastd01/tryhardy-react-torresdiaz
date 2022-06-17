@@ -11,7 +11,6 @@ function ItemDetail( { item } ) {
     function addHandler(quantityToAdd) {
         context.addItem({quantity: quantityToAdd, ...item})
     }
-    
 
     return (
             <div className="detail">
